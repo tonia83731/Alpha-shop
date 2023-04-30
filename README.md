@@ -18,7 +18,7 @@ Alpha Shop 虛擬電商結帳表單
 ## Getting Start
 
 1. 確認是否有安裝
-2. 將專案 Clone 到本地，終端機輸入:
+2. 將專案 Clone 到本地，終端機輸入: https://github.com/tonia83731/Alpha-shop.git
 
 ```
 $ git clone
