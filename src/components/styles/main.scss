@@ -1,0 +1,47 @@
+@import './reset.scss';
+@import './base.scss';
+
+.main-container{ 
+  max-width: 1100px;
+  margin: 80px 165px 165px;
+  @include mainGrid;
+}
+
+.register-container{
+  grid-column: 1/7;
+  width: 100%;
+}
+.cart-container{
+  grid-column: 8/13;
+  width: 100%;
+}
+.register-title{
+  margin-bottom: 72px;
+}
+
+.form-container{
+  width: 100%;
+  margin: 65px 0 50px;
+  .form-title {
+      font-size: 24px;
+      line-height: 24px;
+      margin-bottom: 24px;
+    }
+}
+
+.input-label {
+  font-size: 12px;
+  line-height: 16px;
+  color: $input-label-color;
+  margin-bottom: 8px;
+}
+
+form{
+  height: 290px;
+}
+
+@import './stepProgress.scss';
+@import './stepOne.scss';
+@import './stepTwo.scss';
+@import './stepThree.scss';
+@import './ProcessControl.scss'

@@ -1,0 +1,46 @@
+.radio-group {
+  width: 435px;
+  height: 60px;
+  padding: 20px;
+  border: 1px solid $input-radio-border;
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  &:first-child {
+    margin-bottom: 24px;
+  }
+
+  .radio-col-12 {
+    width: 355px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .text,
+    .price {
+      font-size: 12px;
+      line-height: 16px;
+      color: $input-text;
+    }
+
+    .text {
+      margin-bottom: 5px;
+    }
+
+    .price {
+      justify-self: right;
+    }
+  }
+
+  .period {
+    font-size: 12px;
+    line-height: 16px;
+    color: $input-text;
+  }
+}
+
+.radio-group.radio-checked {
+  border: 1px solid $input-option;
+}

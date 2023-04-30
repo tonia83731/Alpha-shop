@@ -1,0 +1,94 @@
+.progress-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.progress-group {
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .progress-icon {
+    width: 24px;
+    height: 24px;
+    border: 1px solid $pending-process-color;
+    color: $pending-process-color;
+    border-radius: 50%;
+    position: relative;
+
+    .text {
+      @include centerPosition;
+    }
+
+    svg {
+      display: none;
+    }
+  }
+
+  .progress-label {
+    margin: auto 0;
+    margin-left: 8px;
+    line-height: 24px;
+    color: $pending-process-color;
+  }
+}
+
+/* only first step */
+.progress-group.first-step {
+  .progress-icon {
+    border: 1px solid $on-process-color;
+    color: #FFFFFF;
+    background-color: $on-process-color;
+  }
+
+  .progress-label {
+    color: $on-process-color;
+  }
+}
+
+.progress-group.process {
+  .progress-icon {
+    border: 1px solid $on-process-color;
+    color: $on-process-color;
+  }
+
+  .progress-label {
+    color: $on-process-color;
+  }
+}
+
+/* done */
+.progress-group.done {
+  .progress-icon {
+    border: none;
+
+    .text {
+      display: none;
+    }
+
+    svg {
+      display: block;
+      @include centerPosition;
+    }
+  }
+
+  .progress-label {
+    color: $on-process-color;
+  }
+}
+
+
+.progress-bar {
+  display: inline-block;
+  width: 60px;
+  height: 2px;
+  background-color: $pending-process-color;
+  border-radius: 50%;
+  margin: auto 30px;
+}
+
+.progress-bar.link {
+  background-color: $on-process-color;
+}

@@ -1,0 +1,29 @@
+/* Step3 */
+.input-col-12-4 {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(6, minmax(65px, 1fr));
+  grid-gap: 30px;
+  margin-bottom: 24px;
+
+  .input-w-lg-4 {
+    grid-column: 1/5;
+  }
+
+}
+
+.input-col-12-2 {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(6, minmax(65px, 1fr));
+  grid-gap: 30px;
+  margin-bottom: 24px;
+
+  .input-w-lg-3.date {
+    grid-column: 1/4;
+  }
+
+  .input-w-lg-3.ccv {
+    grid-column: 4/7;
+  }
+}
