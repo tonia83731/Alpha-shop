@@ -37,7 +37,7 @@ function Progress({num, name, phase}){
 
 export default function StepProgress(){
   const data = processData.map((data) =>
-    <Progress num={data.num} name={data.name} phase={data.phase}/>
+    <Progress num={data.num} name={data.name} phase={data.phase} key={data.id}/>
   )
   return(
    <section className="progress-container col col-12">

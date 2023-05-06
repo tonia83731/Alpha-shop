@@ -3,21 +3,6 @@ import JeansTwo from '../Assets/images/product-2.jpg'
 import { ReactComponent as IconPlus } from "../Assets/icons/plus.svg";
 import { ReactComponent as IconMinus } from "../Assets/icons/minus.svg";
 
-const cartInfo = [
-  {
-    id: 1,
-    type: 'cart-info shipping col col-12',
-    text: '運費',
-    price: '免費'
-  },
-  {
-    id: 2,
-    type: 'cart-info total col col-12',
-    text: '小計',
-    price: '$5,298'
-  }
-]
-
 const cartItem = [
   {
     id:1,
@@ -35,22 +20,24 @@ const cartItem = [
   }
 ]
 
-export function CartInfo(){
-  const cartInfoList = cartInfo.map(data =>
-    <section className={data.type}>
-      <div className="text">{data.text}</div>
-      <div className="price">{data.price}</div>
-    </section>
-  )
-  return(
-    <>
-      {cartInfoList}
-    </>
-  )
-}
-export function CartItem(){
+const cartInfo = [
+  {
+    id: 1,
+    type: 'cart-info shipping col col-12',
+    text: '運費',
+    price: '免費'
+  },
+  {
+    id: 2,
+    type: 'cart-info total col col-12',
+    text: '小計',
+    price: '$5,298'
+  }
+]
+
+function CartItem(){
   const cartItemList = cartItem.map(data =>
-    <div className="product-container col col-12" data-count="0" data-price={data.price}>
+    <div className="product-container col col-12" data-count="0" data-price={data.price} key={data.name}>
       <img className="img-container" src={data.img} alt={data.name}/>
       <div className="product-info">
         <div className="product-info-base">
@@ -73,7 +60,19 @@ export function CartItem(){
     </section>
   )
 }
-
+function CartInfo(){
+  const cartInfoList = cartInfo.map(data =>
+    <section className={data.type} key={data.text}>
+      <div className="text">{data.text}</div>
+      <div className="price">{data.price}</div>
+    </section>
+  )
+  return(
+    <>
+      {cartInfoList}
+    </>
+  )
+}
 
 
 export default function Cart(){
