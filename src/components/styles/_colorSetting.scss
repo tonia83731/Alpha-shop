@@ -1,0 +1,77 @@
+:root {
+  --main-title-color: #2a2a2a;
+
+  --navigation-item-color: #2a2a2a;
+
+  --progress-icon-undone-color: #afb1bd;
+  --progress-icon-undone-bg-color: transparent;
+  --progress-icon-ongoing-color: #333333;
+  --progress-bar-color: #f0f0f5;
+  --progress-bar-link-color: #000000;
+  --first-step-bg-color: #2a2a2a;
+  --first-step-font-color: #ffffff;
+
+  --input-label-color: #808080;
+  --input-border-color: #4a4a4a;
+  --input-placeholder-color: #999999;
+  --input-content-color: #2a2a2a;
+
+  --input-radio-border-color: #222222;
+  --input-radio-bg-color: transparent;
+  --input-radio-checked: #2a2a2a;
+  --radio-group-border-color: #f0f0f5;
+  --radio-group-font-color: #000000;
+  --input-period-color: #000000;
+
+  --btn-group-border-color: #e6e6eb;
+  --next-btn-font-color: #ffffff;
+  --next-btn-bg-color: #F67599;
+  --pre-btn-font-color: #000000;
+
+  --cart-border-color: #F0F0F5;
+  --cart-bg-color: transparent;
+  --cart-product-name-color: #2a2a2a;
+  --cart-product-price-color: #000000;
+  --cart-product-control-bg-color: #F0F0F5;
+  --cart-product-control-color: #000000;
+  --cart-product-count-color: #000000;
+}
+
+[dark-theme="dark"] {
+  --main-title-color: #ffffff;
+
+  --navigation-item-color: #ffffff;
+
+  --progress-icon-undone-color: rgb(240, 240, 245, 0.4);
+  --progress-icon-undone-bg-color: transparent;
+  --progress-icon-ongoing-color: #ffffff;
+  --progress-bar-color: rgb(240, 240, 245, 0.4);
+  --progress-bar-link-color: #ffffff;
+  --first-step-bg-color: #333333;
+  --first-step-font-color: #ffffff;
+
+  --input-label-color: rgb(255, 255, 255, 0.4);
+  --input-border-color: #5e5e5e;
+  --input-placeholder-color: #000000;
+  --input-content-color: #ffffff;
+
+  --input-radio-border-color: #5e5e5e;
+  --input-radio-bg-color: #333333;
+  --input-radio-checked: #ffffff;
+  --radio-group-border-color: #5e5e5e;
+  --radio-group-font-color: #000000;
+  --input-period-color: rgb(255, 255, 255, 0.4);
+
+  --btn-group-border-color: rgb(255, 255, 255, 0.2);
+  --next-btn-font-color: #ffffff;
+  --next-btn-bg-color: #F67599;
+  --pre-btn-font-color: #ffffff;
+
+  --cart-border-color: rgb(255, 255, 255, 0.2);
+  --cart-background-color: rgb(255, 255, 255, 0.2);
+  --cart-product-name-color: #ffffff;
+  --cart-product-price-color: #ffffff;
+  --cart-product-control-bg-color: #808080;
+  --cart-product-control-color: #333333;
+  --cart-product-count-color: #ffffff;
+}

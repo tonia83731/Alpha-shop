@@ -1,0 +1,116 @@
+/* cart */
+.cart-container {
+  border: 1px solid var(--cart-border-color);
+  border-radius: 8px;
+  margin: 32px 0;
+  padding: 18px 16px 16px;
+
+  .cart-title {
+    display: none
+  }
+
+  .product-list {
+    .product-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+
+      .img-container {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+
+      .product-info {
+        text-align: end;
+
+        .product-name {
+          @include font-adjust(16px, 400, var(--cart-product-name-color));
+        }
+
+        .product-control-container {
+          margin: 18px 0;
+
+          .product-control {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+
+            .product-action {
+              width: 26px;
+              height: 26px;
+            }
+
+            .product-count {
+              @include font-adjust(14px, 500, var(--cart-product-count-color));
+              margin-left: 28px;
+              margin-right: 28px;
+            }
+          }
+        }
+
+        .price {
+          @include font-adjust(16px, 700, var(--cart-product-price-color));
+          font-family: 'Nunito Sans', sans-serif;
+        }
+      }
+    }
+  }
+
+  .cart-info {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid var(--cart-border-color);
+    padding: 16px 0;
+
+    .text {
+      @include font-adjust(14px, 400, var(--cart-product-name-color));
+    }
+
+    .price {
+      @include font-adjust(14px, 700, var(--cart-product-price-color));
+    }
+  }
+}
+
+@media screen and (min-width: 375px) {
+  .cart-container {
+    margin-top: 48px;
+    padding: 32px 24px 0px;
+
+    .cart-title {
+      display: inline-block;
+      @include font-adjust(18px, 700, var(--main-title-color));
+    }
+
+    .product-list {
+      margin-top: 34px;
+
+      .product-container {
+        margin-bottom: 34px;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .product-info {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          margin-left: 20px;
+          text-align: start;
+
+          .product-control-container {
+            .product-control {
+              justify-content: unset;
+            }
+          }
+        }
+      }
+    }
+
+    .cart-info {
+      padding: 18px 0 32px;
+    }
+  }
+}

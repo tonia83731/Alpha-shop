@@ -3,36 +3,67 @@ import JeansTwo from '../Assets/images/product-2.jpg'
 import { ReactComponent as IconPlus } from "../Assets/icons/plus.svg";
 import { ReactComponent as IconMinus } from "../Assets/icons/minus.svg";
 
-const cartItem = [
+const cartInfo = [
   {
-    name: "破壞補丁修身牛仔褲",
-    price: "3999",
-    src:{JeansOne}
+    id: 1,
+    type: 'cart-info shipping col col-12',
+    text: '運費',
+    price: '免費'
   },
   {
-    name: "刷色直筒牛仔褲",
-    price: "1299",
-    src: {JeansTwo}
+    id: 2,
+    type: 'cart-info total col col-12',
+    text: '小計',
+    price: '$5,298'
   }
 ]
 
+const cartItem = [
+  {
+    id:1,
+    name: "破壞補丁修身牛仔褲",
+    price: "$3,999",
+    img:JeansOne,
+    quantity: 1
+  },
+  {
+    id: 2,
+    name: "刷色直筒牛仔褲",
+    price: "$1,299",
+    img: JeansTwo,
+    quantity: 1
+  }
+]
 
-
-
-export default function Cart(){
+export function CartInfo(){
+  const cartInfoList = cartInfo.map(data =>
+    <section className={data.type}>
+      <div className="text">{data.text}</div>
+      <div className="price">{data.price}</div>
+    </section>
+  )
+  return(
+    <>
+      {cartInfoList}
+    </>
+  )
+}
+export function CartItem(){
   const cartItemList = cartItem.map(data =>
     <div className="product-container col col-12" data-count="0" data-price={data.price}>
-      <img className="img-container" src={data.src} alt={data.name}/>
+      <img className="img-container" src={data.img} alt={data.name}/>
       <div className="product-info">
-        <div className="product-name">{data.name}</div>
-        <div className="product-control-container">
-          <div className="product-control">
-            <IconMinus className="product-action minus"/>
-            <span className="product-count"></span>
-            <IconPlus className="product-action plus"/>
+        <div className="product-info-base">
+          <div className="product-name">{data.name}</div>
+          <div className="product-control-container">
+              <div className="product-control">
+                <IconMinus className="product-action minus"/>
+                <span className="product-count">{data.quantity}</span>
+                <IconPlus className="product-action plus"/>
+              </div>
           </div>
         </div>
-        <div className="price"></div>
+        <div className="price">{data.price}</div>
       </div>
     </div>
   )
@@ -40,5 +71,16 @@ export default function Cart(){
     <section className="product-list col col-12" data-total-price="0">
       {cartItemList}
     </section>
+  )
+}
+
+
+
+export default function Cart(){
+  return(
+    <>
+      <CartItem/>
+      <CartInfo/>
+    </>
   )
 }
