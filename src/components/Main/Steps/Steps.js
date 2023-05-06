@@ -1,6 +1,6 @@
 import StepOne from './Step1'
-// import StepTwo from './Step2'
-// import StepThree from './Step3'
+import StepTwo from './Step2'
+import StepThree from './Step3'
 
 export default function Steps(){
   return(

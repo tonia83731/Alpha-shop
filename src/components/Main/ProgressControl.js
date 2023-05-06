@@ -18,19 +18,19 @@ function Previous({prev, name}){
   )
 }
 
-export default function ProgressControl(){
+export default function ProgressControl({type}){
   return(
-    <section class="progress-control-container col col-lg-6 col-sm-12">
-      <section class="button-group col col-12" data-phase="address">
+    <section className="progress-control-container col col-lg-6 col-sm-12" data-type={type}>
+      <section className="button-group col col-12" data-phase="address">
         <Next next="next" name="下一步"/>
       </section>
-      {/* <section class="button-group col col-12" data-phase="shipping">
+      {/* <section className="button-group col col-12" data-phase="shipping">
         <Previous prev="prev" name="上一步"/>
         <Next next="next" name="下一步"/>
       </section>
-      <section class="button-group col col-12" data-phase="credit-card">
+      <section className="button-group col col-12" data-phase="credit-card">
         <Previous prev="prev" name="上一步"/>
-        <button class="next">
+        <button className="next">
           確認下單
         </button>
       </section> */}

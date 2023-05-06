@@ -1,95 +1,112 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 
 /* Basic Color */
-$body-bg: #FFFFFF;
-$title-color: #2A2A2A;
-$on-process-color: #2A2A2A;
-$pending-process-color: #AFB1BD;
-$input-label-color: #808080;
-$input-placeholder: #999999;
-$input-text: #000000;
-$input-option:#2A2A2A;
-$input-option-selected: #000000; 
-$input-border-color: #4A4A4A;
-$input-radio-border: #F0F0F5;
+// $body-bg: #FFFFFF;
+// $title-color: #2A2A2A;
+// $on-process-color: #2A2A2A;
+// $pending-process-color: #AFB1BD;
+// $input-label-color: #808080;
+// $input-placeholder: #999999;
+// $input-text: #000000;
+// $input-option:#2A2A2A;
+// $input-option-selected: #000000; 
+// $input-border-color: #4A4A4A;
+// $input-radio-border: #F0F0F5;
 
-$btn-bg: #F67599;
-$btn-font-color: #FFFFFF;
-$btn-border-top: #E6E6EB;
+// $btn-bg: #F67599;
+// $btn-font-color: #FFFFFF; /**/
+// $btn-border-top: #E6E6EB;
+// $rwd-break-point: 375px;
+// $default-font-size: 16px;
 
-$default-font-size: 16px;
-
-@mixin mainGrid{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(12, minmax(1fr, 65px));
-  grid-gap: 30px;
+@mixin font-adjust($size, $weight, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  @content;
 }
-
-@mixin defaultGrid{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(6, minmax(1fr, 65px));
-  grid-gap: 30px;
-}
-
 @mixin centerPosition{
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @content;
 }
 
-body {
-  font-family: 'Noto Sans TC', sans-serif;
-  font-size: $default-font-size;
-  line-height: 15px;
+.register-title{
+  @include font-adjust(24px, 700, var(--main-title-color));
 }
 
-
-input:not([type="radio"]),
-select {
-  width: 100%;
-  height: 40px;
-  border: 1px solid $input-border-color;
-  border-radius: 4px;
-}
-
-input:not([type="radio"]) {
-  color: $input-text;
-  padding: 12px 0;
-  padding-left: 16px;
-  &::placeholder{
-    color: $input-placeholder;
+@media screen and (min-width: 375px){
+  .register-title{
+    font-size: 32px;
   }
 }
 
- input[type="radio"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
-  border-radius: 50%;
-  // margin-right: 20px;
-  &:checked{
-    box-shadow: inset 0 0 0 5px $input-option;
-  }
- }
+// @mixin mainGrid{
+//   width: 100%;
+//   display: grid;
+//   grid-template-columns: repeat(12, minmax(1fr, 65px));
+//   grid-gap: minmax(1fr,30px);
+// }
 
-select{
-  padding: 12px 0;
-  padding-left: 16px;
-  option {
-    color: $input-option;
+// @mixin defaultGrid{
+//   width: 100%;
+//   display: grid;
+//   grid-template-columns: repeat(6, minmax(1fr, 65px));
+//   grid-gap: 30px;
+// }
 
-    &:first-child {
-      color: $input-option-selected;
-    }
-  }
-}
+// @mixin centerPosition{
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+// }
 
-.cursor-point{
-  cursor: pointer;
-}
+
+
+
+// input:not([type="radio"]),
+// select {
+//   width: 100%;
+//   height: 40px;
+//   border: 1px solid var(--input-border-color);
+//   border-radius: 4px;
+// }
+
+// input:not([type="radio"]) {
+//   // color: $input-text;
+//   padding: 12px 0;
+//   padding-left: 16px;
+//   // &::placeholder{
+//   //   color: $input-placeholder;
+//   // }
+// }
+
+//  input[type="radio"] {
+//   appearance: none;
+//   -webkit-appearance: none;
+//   width: 20px;
+//   height: 20px;
+//   border: 1px solid black;
+//   border-radius: 50%;
+//   // margin-right: 20px;
+//   &:checked{
+//     box-shadow: inset 0 0 0 5px $input-option;
+//   }
+//  }
+
+// select{
+//   padding: 12px 0;
+//   padding-left: 16px;
+//   option {
+//     color: $input-option;
+
+//     &:first-child {
+//       color: $input-option-selected;
+//     }
+//   }
+// }
+
+

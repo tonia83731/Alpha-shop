@@ -1,38 +1,126 @@
-/* step1 */
-.input-col-12-1 {
-  @include defaultGrid;
+
+.form-title{
+  @include font-adjust(24px, 700, var(--main-title-color));
   margin-bottom: 24px;
+}
 
-  .input-w-lg-2 {
-    grid-column: 1/3;
+.input-label{
+  @include font-adjust(12px, 700, var(--input-label-color));
+  margin-bottom: 8px;
+}
+input:not([type="radio"]){
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 4px;
+  color: var(--input-content-color);
+
+  &::placeholder {
+    @include font-adjust(12px, 400, var(--input-placeholder-color));
+    padding-left: 18px;
   }
-
-  .input-w-lg-4 {
-    grid-column: 3/7;
+}
+.select-container{
+  select{
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
   }
 }
 
-.input-col-12-2 {
-  @include defaultGrid;
-  margin-bottom: 24px;
-
-  .input-w-lg-3.phone {
-    grid-column: 1/4;
+.input-group{
+  margin-bottom: 24px; 
+}
+.input-col-12-1{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10%;
+  .input-w-lg-2{
+    grid-column: 1/2;
   }
-
-  .input-w-lg-3.email {
-    grid-column: 4/7;
+  .input-w-lg-4{
+    grid-column: 2/4;
   }
 }
 
-.input-col-12-3 {
-  @include defaultGrid;
-
-  .input-w-lg-2 {
-    grid-column: 1/3;
+@media screen and (min-width: 375px){
+  .form-body {
+      max-height: 336px;
   }
-
-  .input-w-lg-4 {
-    grid-column: 3/7;
+  .input-col-12-1{
+    grid-template-columns: repeat(6, minmax(auto, 65px));
+    grid-gap: 30px;
+    .input-w-lg-2 {
+      grid-column: 1/3;
+    }
+    .input-w-lg-4 {
+      grid-column: 3/7;
+    }
   }
+  .input-col-12-2{
+    display: grid;
+    grid-template-columns: repeat(6, minmax(auto, 65px));
+    grid-gap: 30px;
+    .input-w-lg-3.phone{
+      grid-column: 1/4;
+    }
+    .input-w-lg-3.email {
+      grid-column: 4/7;
+    }
+  }
+  .input-col-12-3 {
+    display:grid;
+    grid-template-columns: repeat(6, minmax(auto, 65px));
+    grid-gap: 30px;
+    .input-w-lg-2 {
+      grid-column: 1/3;
+    }
+    .input-w-lg-4 {
+      grid-column: 3/7;
+    }
+  }
+  
+
+  
 }
+
+
+// /* step1 */
+// .input-col-12-1 {
+//   @include defaultGrid;
+//   margin-bottom: 24px;
+
+//   .input-w-lg-2 {
+//     grid-column: 1/3;
+//   }
+
+//   .input-w-lg-4 {
+//     grid-column: 3/7;
+//   }
+// }
+
+// .input-col-12-2 {
+//   @include defaultGrid;
+//   margin-bottom: 24px;
+
+//   .input-w-lg-3.phone {
+//     grid-column: 1/4;
+//   }
+
+//   .input-w-lg-3.email {
+//     grid-column: 4/7;
+//   }
+// }
+
+// .input-col-12-3 {
+//   @include defaultGrid;
+
+//   .input-w-lg-2 {
+//     grid-column: 1/3;
+//   }
+
+//   .input-w-lg-4 {
+//     grid-column: 3/7;
+//   }
+// }

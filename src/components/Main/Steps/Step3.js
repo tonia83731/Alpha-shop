@@ -15,7 +15,7 @@ export default function StepThree(){
             <ShortResponse name="卡號" type="text" placeholder="1111 2222 3333 4444"/>
           </div>
         </div>
-        <div className="col col-12 input-col-12-2">
+        <div className="col col-12 input-col-12-5">
           <div class="input-group input-w-lg-3 input-w-sm-s3 date">
             <ShortResponse name="有效期限" type="text" placeholder="MM/YY"/>
           </div>

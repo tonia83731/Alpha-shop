@@ -12,12 +12,13 @@ export default function Main(){
           <h2 className="register-title col col-12">結帳</h2>
           <StepProgress/>
           <Steps/>
-          <ProgressControl/>
+          <ProgressControl type="desktop"/>
         </section>
         <section className="cart-container col col-lg-5 col-sm-12">
           <h3 className="cart-title">購物籃</h3>
           <Cart/>
         </section>
+        <ProgressControl type="mobile"/>
       </div>
     </main>
   )

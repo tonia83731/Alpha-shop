@@ -1,46 +1,55 @@
-.radio-group {
-  width: 435px;
+.radio-group{
+  width: 100%;
   height: 60px;
-  padding: 20px;
-  border: 1px solid $input-radio-border;
+  border: 1px solid var(--radio-group-border-color);
   border-radius: 4px;
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  justify-content:flex-start;
   align-items: center;
-
-  &:first-child {
-    margin-bottom: 24px;
+  input[type="radio"]{
+    margin-left: 20px;
+    width: 20px;
+    height: 20px;
   }
+  .radio-info {
+    width: 100%;
+    margin: 11px 20px;
+    .radio-col-12 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-  .radio-col-12 {
-    width: 355px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    .text,
-    .price {
-      font-size: 12px;
-      line-height: 16px;
-      color: $input-text;
+      .text {
+        @include font-adjust(14px, 700, var(--radio-group-font-color));
+        margin-bottom: 2px;
+      }
+      .price {
+        @include font-adjust(12px, 400, var(--radio-group-font-color));
+      }
     }
-
-    .text {
-      margin-bottom: 5px;
+    .period {
+      @include font-adjust(12px, 400, var(--input-period-color));
     }
-
-    .price {
-      justify-self: right;
-    }
-  }
-
-  .period {
-    font-size: 12px;
-    line-height: 16px;
-    color: $input-text;
   }
 }
+.radio-group.standard{
+  margin-bottom: 24px;
+}
+.radio-group.checked{
+  border: 1px solid var(--input-radio-checked);
+  .radio-info{
+    .radio-col-12{
+      .text {
+          font-weight: 400;
+        }
+    }
+  }
+  
+}
 
-.radio-group.radio-checked {
-  border: 1px solid $input-option;
+
+@media screen and (min-width: 375px){
+  .radio-group {
+    width: 80%;
+  }
 }

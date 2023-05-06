@@ -7,6 +7,27 @@ export function ShortResponse({name, type, placeholder}){
   )
 }
 
+const gender = [
+  {
+    value: "mr",
+    name: "先生"
+  },
+  {
+    value: "ms",
+    name: "女士"
+  },
+  {
+    value: "mx",
+    name: "不明"
+  }
+]
+
+export function SelectResponse({datas}){
+  const selectList = datas.map(data =>
+    <option value={data.value}>{data.name}</option>
+  )
+}
+
 export default function StepOne(){
   return(
     <form className="col col-12" data-phase="address">
@@ -40,7 +61,7 @@ export default function StepOne(){
             <div className="input-label">縣市</div>
             <div className="select-container">
               <select required>
-                <option value="">請選擇縣市</option>
+                <option value="" disabled selected>請選擇縣市</option>
                 <option value="KLU">基隆市</option>
                 <option value="TPH">新北市</option>
                 <option value="TPE">臺北市</option>
