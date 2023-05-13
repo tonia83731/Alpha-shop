@@ -68,7 +68,10 @@
     background-color: var(--progress-bar-color);
     border-radius: 50%;
   }
-  .progress-bar.link{
+  .progress-bar.going{
+    background-color: var(--progress-bar-link-color);
+  }
+  .progress-bar.done {
     background-color: var(--progress-bar-link-color);
   }
 }

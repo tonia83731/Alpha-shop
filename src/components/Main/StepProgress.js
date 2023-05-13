@@ -13,7 +13,7 @@ function Progress({num, name, phase, className}){
         </span>
         <span className="progress-label">{name}</span>
       </span>
-      <span className={num === 1 ? "progress-bar link": num === 2 ? "progress-bar" : ""} data-order={num}></span>
+      <span className={num === 1 ? "progress-bar going": num === 2 ? `progress-bar ${className}` : ""} data-order={num}></span>
     </>
   );
 }
