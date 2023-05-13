@@ -1,39 +1,59 @@
+// import { Children } from "react";
 import { ReactComponent as IconLeftArrow } from "../Assets/icons/left-arrow.svg";
 import { ReactComponent as IconRightArrow } from "../Assets/icons/right-arrow.svg";
 
-function Next({next, name}){
+function Next({name, onClick}){
   return(
-    <button className={next}>
+    <button className="next" onClick={onClick}>
       {name}
       <IconRightArrow className="cursor-point right-arrow"/>
     </button>
   )
 }
-function Previous({prev, name}){
+function Previous({name, onClick}){
   return(
-    <button className={prev}>
+    <button className="prev" onClick={onClick}>
       <IconLeftArrow className="cursor-point left-arrow"/>
       {name}
     </button>
   )
 }
 
-export default function ProgressControl({type}){
+function ProgressButtonControl({phase, onClick}){
+  if(phase === "address"){
+    return <Next name="下一步" onClick={onClick}/>
+  }
+  if(phase === "shipping"){
+    return(
+      <>
+        <Previous name="上一步" onClick={onClick}/>
+        <Next name="下一步" onClick={onClick}/>
+      </> 
+    )
+  }
+  return(
+    <>
+      <Previous name="上一步" onClick={onClick}/>
+      <button className="next" onClick={onClick}>確認訂單</button>
+    </> 
+  )
+}
+
+function BtnGroupSection({phase, children}){
+  return(
+    <section className="button-group col col-12" data-phase={phase}>
+      {children}
+    </section>
+  )
+}
+
+
+export default function ProgressControl({type, phase, onClick}){
   return(
     <section className="progress-control-container col col-lg-6 col-sm-12" data-type={type}>
-      <section className="button-group col col-12" data-phase="address">
-        <Next next="next" name="下一步"/>
-      </section>
-      {/* <section className="button-group col col-12" data-phase="shipping">
-        <Previous prev="prev" name="上一步"/>
-        <Next next="next" name="下一步"/>
-      </section>
-      <section className="button-group col col-12" data-phase="credit-card">
-        <Previous prev="prev" name="上一步"/>
-        <button className="next">
-          確認下單
-        </button>
-      </section> */}
+      <BtnGroupSection phase={phase}>
+        <ProgressButtonControl phase={phase} onClick={onClick}/>
+      </BtnGroupSection>
     </section>
   )
 }

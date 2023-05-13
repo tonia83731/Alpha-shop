@@ -2,12 +2,23 @@ import StepOne from './Step1'
 import StepTwo from './Step2'
 import StepThree from './Step3'
 
-export default function Steps(){
+function ChangeStepsForm({phase}){
+  if(phase === "address"){
+    return <StepOne/>
+  }
+  if(phase === "shipping"){
+    return <StepTwo/>
+  }
+  return <StepThree/>
+}
+
+export default function Steps({phase}){
   return(
     <section className="form-container col col-12">
-      <StepOne/>
-      {/* <StepTwo/> */}
-      {/* <StepThree/> */}
+      <ChangeStepsForm phase={phase}/>
+      {/* {phase === "adress" && <StepOne/>}
+      {phase === "shipping" && <StepTwo/>}
+      {phase === "credit-card" && <StepThree/>} */}
     </section>
   )
 }
