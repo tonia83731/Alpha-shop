@@ -2,7 +2,8 @@
 import { ReactComponent as IconLeftArrow } from "../Assets/icons/left-arrow.svg";
 import { ReactComponent as IconRightArrow } from "../Assets/icons/right-arrow.svg";
 
-function Next({name, onClick}){
+
+function Next({name, onClick, onSubmit}){
   return(
     <button className="next" onClick={onClick}>
       {name}
@@ -19,7 +20,7 @@ function Previous({name, onClick}){
   )
 }
 
-function ProgressButtonControl({phase, onClick}){
+function ProgressButtonControl({phase, onClick, onSubmit}){
   if(phase === "address"){
     return <Next name="下一步" onClick={onClick}/>
   }
@@ -48,7 +49,7 @@ function BtnGroupSection({phase, children}){
 }
 
 
-export default function ProgressControl({type, phase, onClick}){
+export default function ProgressControl({type, phase, onClick, onSubmit}){
   return(
     <section className="progress-control-container col col-lg-6 col-sm-12" data-type={type}>
       <BtnGroupSection phase={phase}>

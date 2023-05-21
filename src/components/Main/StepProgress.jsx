@@ -50,9 +50,9 @@ function StepProgressChange({step}){
 
 
 export default function StepProgress({step}){
-  if(step === "address"){
+  // if(step === "address"){
 
-  }
+  // }
   return(
    <section className="progress-container col col-12" step={step}>
       <StepProgressChange step={step}/>

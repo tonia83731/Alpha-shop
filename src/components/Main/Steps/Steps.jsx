@@ -16,9 +16,6 @@ export default function Steps({phase}){
   return(
     <section className="form-container col col-12">
       <ChangeStepsForm phase={phase}/>
-      {/* {phase === "adress" && <StepOne/>}
-      {phase === "shipping" && <StepTwo/>}
-      {phase === "credit-card" && <StepThree/>} */}
     </section>
   )
 }

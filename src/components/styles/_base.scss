@@ -1,24 +1,4 @@
 
-
-/* Basic Color */
-// $body-bg: #FFFFFF;
-// $title-color: #2A2A2A;
-// $on-process-color: #2A2A2A;
-// $pending-process-color: #AFB1BD;
-// $input-label-color: #808080;
-// $input-placeholder: #999999;
-// $input-text: #000000;
-// $input-option:#2A2A2A;
-// $input-option-selected: #000000; 
-// $input-border-color: #4A4A4A;
-// $input-radio-border: #F0F0F5;
-
-// $btn-bg: #F67599;
-// $btn-font-color: #FFFFFF; /**/
-// $btn-border-top: #E6E6EB;
-// $rwd-break-point: 375px;
-// $default-font-size: 16px;
-
 @mixin font-adjust($size, $weight, $color) {
   font-size: $size;
   font-weight: $weight;

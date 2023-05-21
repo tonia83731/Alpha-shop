@@ -22,15 +22,15 @@ function NavLinkItem(){
 function NavIconItem(){
   return(
     <ul className="nav-list site-action-list">
-      <li class="nav-item">
-        <IconSearch classnName="nav-icon cursor-point"/>                          
+      <li className="nav-item">
+        <IconSearch className="nav-icon cursor-point"/>                          
       </li>
-      <li class="nav-item">
-        <IconCart classnName="nav-icon cursor-point"/>                          
+      <li className="nav-item">
+        <IconCart className="nav-icon cursor-point"/>                          
       </li>
-      <li class="nav-item">
-        <IconMoon classnName="nav-icon cursor-point"/> 
-        <IconSun classnName="nav-icon cursor-point"/>                          
+      <li className="nav-item">
+        <IconMoon className="nav-icon cursor-point"/> 
+        <IconSun className="nav-icon cursor-point"/>                          
       </li>
     </ul>
   )
@@ -40,8 +40,8 @@ export default function Header(){
   return(
     <header className ="site-header">
       <div className ="header-container mx-auto">
-        <input id="navbar-toggle" className ="navbar-toggle" type="checkbox" />
-        <label for="navbar-toggle" className ="burger-container">
+        <input id="navbar-toggle" className="navbar-toggle" type="checkbox" />
+        <label for="navbar-toggle" className="burger-container">
           <svg className ="icon-toggle cursor-point">
             <use xlinkHref="#svg-icon-toggle"></use>
           </svg>

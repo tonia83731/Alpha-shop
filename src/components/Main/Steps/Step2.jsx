@@ -14,9 +14,9 @@ const shipping = [
 ]
 
 function ChoiceResponse(){
-  const shippingList = shipping.map((data) =>
-    <label className={data.id === "shipping-standard"? "radio-group col col-12 standard checked" : "radio-group col col-12"} key={data.id} data-price="0">
-      <input id={data.id} type="radio" name="shipping" className="radio-input"/>
+  const shippingList = shipping.map((data, index) =>
+    <label className={`radio-group col col-12 ${data.id === "shipping-standard"? "standard checked": ""}`} key={data.id} data-price="0">
+      <input id={data.id} type="radio" name="shipping" className="radio-input" defaultChecked={index === 0}/>
       <div className="radio-info">
         <div className="col col-12 radio-col-12">
           <div className="text">{data.name}</div>
