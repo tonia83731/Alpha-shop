@@ -176,11 +176,11 @@ const locationOptions = [
 
 
 
-export function ShortResponse({name, type, placeholder}){
+export function ShortResponse({name, type, placeholder, data, onChange}){
   return(
     <>
       <div className="input-label">{name}</div>
-      <input type={type} placeholder={placeholder} />
+      <input type={type} placeholder={placeholder} data-name={data} onChange={onChange}/>
     </>
   )
 }

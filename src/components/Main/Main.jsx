@@ -11,6 +11,7 @@ const stepPhaseList = ['address', 'shipping', 'credit-card']
 
 export default function Main(){  
   const creditCardData = useContext(CreditCardContext)
+  const [creditCardInfo, setCreditCardInfo] = useState(creditCardData)
   const cartData = useContext(CartContext)
   const [cartItems, setCartItems] = useState(cartData)
   const [nextSteps, setNextSteps] =useState(0)
@@ -30,14 +31,19 @@ export default function Main(){
 
   let currentStep = stepPhaseList[nextSteps]
 
-
+  function handleChange(e){
+    setCreditCardInfo({
+      ...creditCardInfo,
+      [e.target.dataset.name]: e.target.value,
+    })
+  }
 
   function handleSubmit(){
     const creditCard = 
-      ` 持卡人姓名: ${creditCardData.cardUser}
-        卡號: ${creditCardData.cardNum}
-        有效期限: ${creditCardData.expireDate}
-        CVC / CCV: ${creditCardData.cvc}
+      `持卡人姓名: ${creditCardInfo.cardHolder}
+       卡號: ${creditCardInfo.cardNum}
+       有效期限: ${creditCardInfo.expireDate}
+       CVC / CCV: ${creditCardInfo.cvc}
       `
     console.log(`${creditCard}`)
     console.log(`總金額: ${totalPrice}`)
@@ -82,7 +88,7 @@ export default function Main(){
           <h2 className="register-title col col-12">結帳</h2>
           <StepProgress step={currentStep}/>
           {/* edit here to change steps */}
-          <Steps phase={currentStep}/> 
+          <Steps phase={currentStep} onChange={handleChange}/> 
           <ProgressControl type="desktop" phase={currentStep} onClick={handleStep}/>
         </section>
         <CartContext.Provider value={cartItems}>

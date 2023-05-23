@@ -1,7 +1,7 @@
 import {createContext} from 'react';
 
 const creditCardData = {
-  cardUser: "",
+  cardHolder: "",
   cardNum: "",
   expireDate: "",
   cvc: ""
